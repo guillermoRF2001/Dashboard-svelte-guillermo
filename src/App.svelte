@@ -19,7 +19,7 @@
   
   <Filtros />
 
-  <img src="/public/logoTitanic.png" alt="Descripción de la imagen" />
+  <img src="/logoTitanic.png" alt="Descripción de la imagen" />
   </div>
   <section class="charts">
     
