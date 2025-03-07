@@ -1,23 +1,21 @@
-# Usar una imagen base de Node.js más reciente
-FROM node:18
+# Usa una imagen base con Node.js
+FROM node:18-alpine
 
-# Establecer el directorio de trabajo dentro del contenedor
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar los archivos de configuración del proyecto
-COPY package*.json ./
+# Copia los archivos del proyecto al contenedor
+COPY package.json package-lock.json ./ 
+RUN npm install 
 
-# Instalar las dependencias del proyecto
-RUN npm install
-
-# Copiar el resto de los archivos del proyecto
+# Copia el resto de los archivos (incluyendo /public y /src)
 COPY . .
 
-# Construir la aplicación para producción
+# Construye la aplicación (si usas Vite, esto es opcional si usas "preview")
 RUN npm run build
 
-# Exponer el puerto en el que la aplicación se ejecutará
+# Expone el puerto que usa la app
 EXPOSE 4173
 
-# Comando para ejecutar la aplicación en modo de vista previa
+# Comando para ejecutar la aplicación
 CMD ["npm", "run", "preview"]
