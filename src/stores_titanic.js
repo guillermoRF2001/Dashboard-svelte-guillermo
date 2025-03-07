@@ -2,7 +2,7 @@
 import { readable, derived, writable } from 'svelte/store';
 import { csv, autoType, extent } from 'd3';
 
-const dataPath = '../public/data/Titanic-Dataset.csv';
+const dataPath = '/data/Titanic-Dataset.csv';
 
 export const dataTitanic = readable([], set => { 
   csv(dataPath, autoType).then(d => set(d));
