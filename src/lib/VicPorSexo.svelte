@@ -60,23 +60,4 @@
   {/if}
 </main>
 
-<style>
-  main {
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      padding: 20px;
-      color: #2c3e50;
-  }
 
-  h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #34495e;
-  }
-
-  .no-data {
-      font-size: 18px;
-      color: red;
-      font-weight: bold;
-  }
-</style>
